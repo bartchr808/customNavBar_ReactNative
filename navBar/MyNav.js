@@ -27,11 +27,11 @@ export default class MyNav extends Component {
 
   }
 
-  push(nextRoute) { //
+  push(nextRoute) { // add route to end of list and set new route state
     this.setState({route: this.state.route.concat(nextRoute)});
   }
 
-  pop() {
+  pop() { // take off the last route and set new route state
     this.setState({route: this.state.route.slice(0, this.state.route.length -1)});
   }
 
@@ -40,10 +40,10 @@ export default class MyNav extends Component {
 
       <View style={styles.container}>
         <View style={styles.navBar}>
-          {this.props.renderNavBar(this.state.route[this.state.route.length-1], this)}
+          {this.props.renderNavBar(this.state.route[this.state.route.length-1], this)} // passes in last route in list and MyNav component
         </View>
         <View style={styles.body}>
-          {this.props.renderPage(this.state.route[this.state.route.length-1], this)}
+          {this.props.renderPage(this.state.route[this.state.route.length-1], this)} // passes in last route in list and MyNav component
         </View>
       </View>
     );

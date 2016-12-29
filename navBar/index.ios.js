@@ -33,10 +33,10 @@ export default class navBar extends Component {
   renderNavBar(currentRoute, navigator) { // creates the navBar based on the route title which is assigned as a property in MyNav. Called in MyNav.js
     return <View style={{backgroundColor: 'green', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
       <View style={{flex: 1}}>
-        {currentRoute.key != "one" ?
+        {currentRoute.key != "one" ? // if not first page, add back button
         <TouchableHighlight style={{flex:1, justifyContent: 'center', alignItems: 'center'}} onPress={navigator.pop}><Text style={{textAlign: 'center'}}>Back</Text></TouchableHighlight>: undefined}
       </View>
-      <Text style={{flex:3, textAlign: 'center'}}>{currentRoute.title ? currentRoute.title : ''}</Text>
+      <Text style={{flex:3, textAlign: 'center'}}>{currentRoute.title ? currentRoute.title : ''}</Text> // check if Title exists then add to avoid "undefined" title
       <View style={{flex:1}}/></View>
   }
 }
